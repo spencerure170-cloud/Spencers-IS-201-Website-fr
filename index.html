@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spencer Ure</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #0a2540, #001f3f);
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 650px;
+      line-height: 1.7;
+    }
+
+    .tagline {
+      color: #a7c7ff;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    .profile-img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      margin-bottom: 20px;
+    }
+
+    .linkedin-btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 999px;
+      background-color: #0a66c2;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .linkedin-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(10, 102, 194, 0.5);
+      color: white;
+    }
+
+    .nav-card {
+      background-color: rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 25px;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      text-decoration: none;
+      color: white;
+      height: 100%;
+    }
+
+    .nav-card:hover {
+      transform: translateY(-8px);
+      background-color: rgba(255, 255, 255, 0.16);
+    }
+
+    .nav-card h3 {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container hero">
+  <div class="row align-items-center w-100">
+
+    <!-- TEXT COLUMN -->
+    <div class="col-lg-7 mb-5 mb-lg-0">
+      <p class="tagline mb-2">Brigham Young University · Business Student</p>
+
+      <h1 class="mb-4">Spencer Ure</h1>
+
+      <p class="mb-5">
+        I’m a student at Brigham Young University with a deep interest in business, strategy,
+        and leadership. I’m driven by building things that last — companies, teams, and a strong family.
+        <br><br>
+        My mission is to pursue excellence in business while becoming a present, intentional father
+        who leads with integrity, discipline, and purpose.
+      </p>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <a href="resume.html" class="nav-card">
+            <h3>Résumé</h3>
+            <p>Education, experience, and skills.</p>
+          </a>
+        </div>
+
+        <div class="col-md-4">
+          <a href="scratch.html" class="nav-card">
+            <h3>BYU Football</h3>
+            <p>A from-scratch page on BYU Football.</p>
+          </a>
+        </div>
+
+        <div class="col-md-4">
+          <a href="app.html" class="nav-card">
+            <h3>Web App</h3>
+            <p>An interactive BYU Football game.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- IMAGE + LINKEDIN COLUMN -->
+    <div class="col-lg-5 text-center">
+      <!-- Replace with your own photo -->
+      <img src="img/DSC09160.jpg" alt="Photo of Spencer Ure" class="profile-img">
+
+      <a 
+        href="https://www.linkedin.com/in/spencer-ure/" 
+        target="_blank" 
+        class="linkedin-btn"
+      >
+        Connect on LinkedIn
+      </a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

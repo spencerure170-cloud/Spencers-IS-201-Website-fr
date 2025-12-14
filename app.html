@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BYU Football Field Goal Game</title>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #002E5D;
+      color: #ffffff;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+    }
+
+    .game-container {
+      background-color: #ffffff;
+      color: #000000;
+      max-width: 700px;
+      margin: auto;
+      padding: 40px;
+      border-radius: 15px;
+    }
+
+    .field {
+      margin: 30px auto;
+      width: 100%;
+      height: 220px;
+      background-color: #3a7d44;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .goalpost {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 120px;
+      border-left: 6px solid yellow;
+      border-right: 6px solid yellow;
+      border-top: 6px solid yellow;
+    }
+
+    .controls {
+      margin-top: 30px;
+    }
+
+    label {
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    input[type="range"] {
+      width: 80%;
+      margin: 10px 0 20px 0;
+    }
+
+    button {
+      background-color: #002E5D;
+      color: #ffffff;
+      font-size: 1.1rem;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #004A8F;
+      transform: translateY(-2px);
+    }
+
+    .result {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .score {
+      margin-top: 15px;
+      font-size: 1.2rem;
+    }
+
+    .nav {
+      margin-top: 30px;
+    }
+
+    .nav a {
+      color: #002E5D;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>BYU Football</h1>
+<h2>Field Goal Kicking Challenge</h2>
+
+<div class="game-container">
+
+  <div class="field">
+    <div class="goalpost"></div>
+  </div>
+
+  <div class="controls">
+    <label for="power">Kick Power</label><br>
+    <input type="range" id="power" min="1" max="100" value="50"><br>
+
+    <label for="accuracy">Kick Direction</label><br>
+    <input type="range" id="accuracy" min="-50" max="50" value="0"><br>
+
+    <button onclick="kickFieldGoal()">Kick Field Goal</button>
+  </div>
+
+  <div class="result" id="result"></div>
+  <div class="score" id="score">Score: 0 / 0</div>
+
+  <div class="nav">
+    <p><a href="scratch.html">← Back to BYU Football Page</a></p>
+  </div>
+
+</div>
+
+<script>
+  let attempts = 0;
+  let makes = 0;
+
+  function kickFieldGoal() {
+    const power = document.getElementById("power").value;
+    const accuracy = document.getElementById("accuracy").value;
+
+    attempts++;
+
+    // Simple game logic
+    const powerSuccess = power >= 40 && power <= 80;
+    const accuracySuccess = Math.abs(accuracy) <= 15;
+
+    if (powerSuccess && accuracySuccess) {
+      makes++;
+      document.getElementById("result").innerText = "🏈 FIELD GOAL IS GOOD!";
+      document.getElementById("result").style.color = "green";
+    } else {
+      document.getElementById("result").innerText = "❌ NO GOOD!";
+      document.getElementById("result").style.color = "red";
+    }
+
+    document.getElementById("score").innerText =
+      "Score: " + makes + " / " + attempts;
+  }
+</script>
+
+</body>
+</html>
